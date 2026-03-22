@@ -130,19 +130,19 @@ export default function StartPage() {
   }
 
   function submitIntake(override?: Partial<Record<keyof IntakeAnswers, string>>) {
-    const final = { ...answers, ...override }
+  const final = { ...answers, ...override }
 
-    const params = new URLSearchParams({
-      dest: (final.destination as DestinationParam) ?? 'ANY',
-      goal: (final.goal as GoalParam) ?? 'holiday',
-      weeks: String((final.duration_weeks as DurationParam) ?? '2'),
-      budget: String((final.budget_max as BudgetParam) ?? '1500'),
-      age: String((final.age_group as AgeParam) ?? '21'),
-      acc: (final.accommodation_pref as AccomParam) ?? 'any',
-    })
+  const params = new URLSearchParams({
+    dest: String(final.destination ?? 'ANY'),
+    goal: String(final.goal ?? 'holiday'),
+    weeks: String(final.duration_weeks ?? '2'),
+    budget: String(final.budget_max ?? '1500'),
+    age: String(final.age_group ?? '21'),
+    acc: String(final.accommodation_pref ?? 'any'),
+  })
 
-    router.push(`/results?${params.toString()}`)
-  }
+  router.push(`/results?${params.toString()}`)
+}
 
   const progressPercent = ((currentStep + (selectedValue ? 1 : 0)) / STEPS.length) * 100
 
