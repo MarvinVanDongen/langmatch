@@ -1,10 +1,6 @@
-import { Suspense } from 'react'
-import BedanktContent from './BedanktContent'
+import { redirect } from 'next/navigation'
 
-export default function BedanktPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-bg" />}>
-      <BedanktContent />
-    </Suspense>
-  )
+// Old Dutch URL — redirect to the English thank-you page
+export default function BedanktRedirect() {
+  redirect('/thank-you')
 }

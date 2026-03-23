@@ -6,10 +6,10 @@ interface LabelBadgeProps {
 }
 
 const LABEL_STYLES: Record<RecommendationLabel, string> = {
-  GO: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+  'GO':       'bg-emerald-100 text-emerald-800 border-emerald-200',
   'GOOD FIT': 'bg-sky-100 text-sky-800 border-sky-200',
-  CAUTION: 'bg-amber-100 text-amber-800 border-amber-200',
-  SKIP: 'bg-stone-100 text-stone-600 border-stone-200',
+  'CAUTION':  'bg-amber-100 text-amber-800 border-amber-200',
+  'SKIP':     'bg-stone-100 text-stone-500 border-stone-200',
 }
 
 const SIZE_STYLES = {
@@ -20,9 +20,7 @@ const SIZE_STYLES = {
 
 export default function LabelBadge({ label, size = 'md' }: LabelBadgeProps) {
   return (
-    <span
-      className={`inline-flex items-center font-sans font-semibold uppercase rounded-full border ${LABEL_STYLES[label]} ${SIZE_STYLES[size]}`}
-    >
+    <span className={`inline-flex items-center font-sans font-semibold uppercase rounded-full border ${LABEL_STYLES[label]} ${SIZE_STYLES[size]}`}>
       {label}
     </span>
   )

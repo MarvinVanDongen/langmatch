@@ -1,5 +1,3 @@
-// Core data types for LangMatch MVP
-
 export type Country = 'ES' | 'PT' | 'MT'
 export type Language = 'Spanish' | 'Portuguese' | 'English'
 export type CourseType = 'conversational' | 'intensive' | 'general' | 'exam_prep' | 'business' | 'immersive' | 'cultural' | 'holiday'
@@ -37,7 +35,6 @@ export interface School {
   image_url: string
 }
 
-// Values serialised to/from URL search params
 export type DestinationParam = 'ES' | 'PT' | 'MT' | 'ANY'
 export type GoalParam = 'holiday' | 'fluency' | 'exam' | 'career' | 'gap'
 export type DurationParam = 1 | 2 | 3 | 6
@@ -64,35 +61,31 @@ export interface ScoredSchool extends School {
   recommendation_reason: string
 }
 
-// URL param keys used throughout the app
-export const INTAKE_PARAM_KEYS = ['dest', 'goal', 'weeks', 'budget', 'age', 'acc'] as const
-
-// Human-readable labels
 export const DESTINATION_LABELS: Record<DestinationParam, string> = {
-  ES: 'Spanje',
+  ES: 'Spain',
   PT: 'Portugal',
   MT: 'Malta',
-  ANY: 'Verrassing',
+  ANY: 'Anywhere',
 }
 
 export const GOAL_LABELS: Record<GoalParam, string> = {
-  holiday: 'Taal + vakantie',
-  fluency: 'Zo snel vloeiend',
-  exam: 'Examenvoorbereiding',
-  career: 'Taal voor carrière',
+  holiday: 'Language + holiday',
+  fluency: 'Become fluent fast',
+  exam: 'Exam preparation',
+  career: 'Language for career',
   gap: 'Gap year',
 }
 
 export const DURATION_LABELS: Record<DurationParam, string> = {
   1: '1 week',
-  2: '2 weken',
-  3: '3–4 weken',
-  6: '6+ weken',
+  2: '2 weeks',
+  3: '3–4 weeks',
+  6: '6+ weeks',
 }
 
 export const BUDGET_LABELS: Record<BudgetParam, string> = {
-  900: 'Tot €900',
-  1500: '€900–€1.500',
-  2500: '€1.500–€2.500',
-  9999: '€2.500+',
+  900: 'Under €900',
+  1500: '€900–€1,500',
+  2500: '€1,500–€2,500',
+  9999: '€2,500+',
 }

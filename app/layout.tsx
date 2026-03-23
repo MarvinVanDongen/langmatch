@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Fraunces, DM_Sans } from 'next/font/google'
+import { Playfair_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
 
-const fraunces = Fraunces({
+const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
 
@@ -17,19 +17,15 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'LangMatch – Vind jouw perfecte taalschool',
+  title: 'LangMatch – Find Your Perfect Language School',
   description:
-    'LangMatch helpt je de beste taalschool in het buitenland vinden op basis van jouw budget, doel en reisduur. Alleen de top 3 matches – in 90 seconden.',
-  keywords: ['taalschool', 'spaans leren', 'engels leren', 'malta', 'spanje', 'portugal'],
+    'LangMatch finds the best-fit language school abroad for you based on your budget, goal, and travel duration. Only the top 3 matches — in 90 seconds.',
+  keywords: ['language school abroad', 'learn spanish', 'learn english malta', 'language travel', 'spain portugal malta'],
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" className={`${fraunces.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   )
